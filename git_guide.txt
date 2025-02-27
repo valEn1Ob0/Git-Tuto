@@ -74,4 +74,5 @@ Aclaraciones:
     3. Unir las ramas y aceptar ambos cambios
     4. Comparar cambios
     5. Resolver en el merge editor donde puedo ver mas detalladamente las dos ramas para tomar acciones 
-  
+  Un repositorio remoto quire decir un repositorio hosteado por una pagina web como github
+  El hash de un commit es como git identifica a el commit para luego poder tomar acciones en el con git
