@@ -30,6 +30,8 @@ git config --global user.email "your.email@example.com"
 
 # Configure line endings (Unix)
 git config --global core.autocrlf input
+# Configure line endings (Windows)
+git config --global core.autocrlf true
 ```
 
 ### Basic Operations
