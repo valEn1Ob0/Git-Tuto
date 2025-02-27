@@ -1,4 +1,22 @@
 GIT TUTORIAL:
 
 Comandos basicos:
+  git init # Inicia un repositorio con git en mi carpeta actual 
+  git clone [URL] # Clona (descarga) un repositorio remoto a mi maquina local
+  git add [archivo] # Agrega archivos al area de preparacion (usa git add . para agregar todos los archivos)
+  git status # Muestra el estado de los archivos en el repositorio de git
+  git status -s (o) --short # Igual a git status pero muestra menos informacion
+  git commit -m "mensaje" -a # Guarda los cambios de mi repositorio con un mensaje de los cambios
+  git commit # Guarda los cambios de mi repositorio sin ningun mensaje
+  git commit -a # Guarda los cambios de mi repositorio sin pasar por el area de preparacion
+  git restore [archivo] # Restablece un archivo eliminado que se le habia hecho un commit 
+  git checkout [archivo] # En caso de que le archivo no este en el area de preparacion,
+   establece el ultimo estado en el que estuvo un archivo cuando se le hizo un commit
+  git reset --hard # Forza los cambios hacia el ultimo commit hecho 
+  git mv [archivo1 archivo2] # Cambia el nombre de un archivo y se guarda en el area de preparacion 
+  git show [archivo] # Muestra detalles de un archivo que se le haya hecho un commit
 
+Aclaraciones:
+  Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
+    (si ya se le habia hecho un commit antes)
+  
