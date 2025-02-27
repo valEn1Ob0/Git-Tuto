@@ -66,11 +66,35 @@ Comandos basicos:
     a la rama elegida 
   git push -u origin [rama actual] # Lo mismo que el original pero este configura para que se haga,
     "git push" se haga a origin y la rama elegida   
+  git push origin --delete [nombre-de-la-rama] # Elimina una rama del repositorio remoto 
   git pull # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local,
     (trae los archivos del servidor y los fusiona a la rama actual)
   git fetch # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local,
-    (trae los archivos del servidor en otra rama temporal, para incorporarlo a la rama main se puede hacer git merge origin/main)  
-  
+    (trae los archivos del servidor en otra rama temporal, para incorporarlo a la rama main se puede hacer "git merge origin/main")  
+
+Buenas Practicas en git:
+  1. Agregar .gitingore (mayormente util)
+  2. Configuraciones de git simples (user, email)
+  3. Crear ramas solo para uso general:
+   que afecta a la mayor parte de nuestro projecto, en otras palabras resolver el objetivo principal
+  4. Agregar descripciones adecuadas:
+    las descripciones deben ser adecuadas para la idea en la que son creadas 
+  5. Usar kebab-case para branches
+  6. Probar ramas completas en la rama principal:
+    para evitar errores futuros es recomendado fucionar las ramas y probar la solucion de la otra rama,
+    (si es que ya probaron la otra rama)
+  7. Usar estrategias de fusion segun la ocacion
+  8. Los commits no son necesarios que se hagan luego de terminar una secion de git,
+    pero si es recomendado que se hagan cambios por cada cambio que es significativo como para que se considere una version 
+  9. Mantener el historial de git limpio
+  10. Usar git stash
+  11. Usar cherry-pick
+  12. Usar rebase y squash
+  13. Usar submodulos de git
+  14. Usar git hooks
+  15. Usar git bisect
+  16. Usar GitFlow
+  17. Usar GitHub Flow
 
 Aclaraciones: 
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
