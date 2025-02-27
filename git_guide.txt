@@ -47,8 +47,20 @@ Comandos basicos:
   git reset --mixed [hash] # Borra el commit seleccionado sin guardar el ultimo commit al area de preparacion, 
     pero no modifica el area de trabajo
   git reset --hard [hash] # Borra el commit seleccionado sin guardar nada 
+  git branch # Muestra el nombre de las ramas que tenemos creadas
+  git branch [nombre de la rama] # Crea una rama desde nuestra rama actual usando convencionalmente kebab-case,
+   (usar "-" para separar entre palabras)
+  git switch [nombre de la rama] # Intercambia la rama que estoy usando
+  git switch -c [nombre de la rama] # Crea una rama desde nuestra rama actual y se intercambia automaticamente a esa rama
+  git branch -d [nombre de la rama] # Elimina la rama seleccionada (no eliminarla estando dentro de esa rama)
+  git switch [nombre de la rama viejo] [nombre de la rama nuevo] # Renombra una rama seleccionada,
+   (no cambiar el nombre dentro de esa rama)
+  git branch -m [nombre de la rama nuevo] # Cambia el nombre de la rama actual
+    
 
-Aclaraciones:
+Aclaraciones: 
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
     (si ya se le habia hecho un commit antes)
+  Las ramas son copias de un repositorio que no afectan a la version original de el a menos que se fusionen,
+    a estas ramas se le dan nombres, ej: la rama original es master
   
