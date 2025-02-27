@@ -15,6 +15,7 @@ Comandos basicos:
   git reset --hard # Forza los cambios hacia el ultimo commit hecho 
   git mv [archivo1 archivo2] # Cambia el nombre de un archivo y se guarda en el area de preparacion 
   git show [archivo] # Muestra detalles de un archivo que se le haya hecho un commit
+  
 
 Aclaraciones:
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
