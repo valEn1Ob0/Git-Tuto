@@ -1,5 +1,18 @@
 GIT TUTORIAL:
 
+Configuraciones basicas:
+  --local # Las configuraciones con parametros locales aplican unicamente al repositorio actual 
+  --global # Las configuraciones con parametros globales aplican para todos los repositorios de el usuario actual
+  --system # Las configuraciones con parametros de sistema aplican para todos los usuarios y repositorios del sistema actual
+
+  git config --global user.name "Nombre" # Configura globalmente el nombre con el que se reconoze a el usuario
+  git config --global user.email "tu.email@ejemplo.com" # Configura globalmente el email del usuario
+  git config --global core.editor "vim" # Configura el editor de codigo globalmente (en este caso es vim) del usuario
+  git config --global core.autocrlf input # Configura salto de linea segun el sistema que tengas globalmente,
+    (si tienes sistema unix dajalo en input y si tienes sistema windows dejalo en true) del usuario usuario
+  git config --global core.abbrev 5 # Configura el codigo con el que se reconze a los commits con un largo
+
+
 Comandos basicos:
   git init # Inicia un repositorio con git en mi carpeta actual 
   git clone [URL] # Clona (descarga) un repositorio remoto a mi maquina local
@@ -18,6 +31,12 @@ Comandos basicos:
   git diff --staged # Muestra la diferencia de los archivos que estan en el area de preparacion y los del ultimo commit
   git log # Muestra los datos de los commits hechos 
   git log --oneline # Muestra los datos de los commits hechos (simplificado) 
+  git diff [commit1] [commit2] # Muestra los cambios de los archivos entre dos commits,
+   (es necesario tener el codigo de los commits)
+  git diff --name-only [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio muestra la diferencia de los nombres
+  git diff --word-diff [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio,
+   muestra la diferencia exacta de los archivos
+  
 
 Aclaraciones:
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
