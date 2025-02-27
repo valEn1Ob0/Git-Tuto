@@ -59,6 +59,7 @@ Comandos basicos:
   git reset --hard [commit] # Elimina la fusion rama
   git merge [nombre de la rama] # Fuciona la rama seleccionada con la master    
   git ls-tree -r --name-only [hash] # Muestra todos los nombres de los archivos y directorios que tiene un commit en especifico
+  git reflog # Muestra todas las referencias a los commits (incluso si se borraron)
 
 Aclaraciones: 
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
