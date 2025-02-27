@@ -56,11 +56,21 @@ Comandos basicos:
   git switch [nombre de la rama viejo] [nombre de la rama nuevo] # Renombra una rama seleccionada,
    (no cambiar el nombre dentro de esa rama)
   git branch -m [nombre de la rama nuevo] # Cambia el nombre de la rama actual
-    
+  git reset --hard [commit] # Elimina la fusion rama
+  git merge [nombre de la rama] # Fuciona la rama seleccionada con la master    
+  git ls-tree -r --name-only [hash] # Muestra todos los nombres de los archivos y directorios que tiene un commit en especifico
 
 Aclaraciones: 
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
     (si ya se le habia hecho un commit antes)
-  Las ramas son copias de un repositorio que no afectan a la version original de el a menos que se fusionen,
+  Las ramas son copias de un repositorio que no afectan a la version original de el a menos que se fusion en,
     a estas ramas se le dan nombres, ej: la rama original es master
+  Si creamos una rama desde master y luego hacemos un commit en esa rama, pero luego tambien hago un commit en la rama,
+    y fuciono las dos git me da un error porque no sabe a que commit dar prioridad, ahi tenemos cinco opciones dentro de,
+    visual studio code:
+    1. Unir las ramas pero solo aceptar el cambio de la rama actual
+    2. Unir las ramas pero aceptando la otra rama
+    3. Unir las ramas y aceptar ambos cambios
+    4. Comparar cambios
+    5. Resolver en el merge editor donde puedo ver mas detalladamente las dos ramas para tomar acciones 
   

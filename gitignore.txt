@@ -1,0 +1,3 @@
+GITignore reglas para ignorar:
+  1. *.tipodearchivo # Ignora todos los archivos que tengan este tipo
+  2. Poner el nombre completo del archivo 
