@@ -1,3 +1,48 @@
 GITignore reglas para ignorar:
-  1. *.tipodearchivo # Ignora todos los archivos que tengan este tipo
-  2. Poner el nombre completo del archivo 
+  1. Ignorar un archivo o directorio específico
+  Puedes especificar un archivo o directorio con su nombre relativo al directorio donde se encuentra el .gitignore.
+  Ejemplo:
+  *.log — Ignora todos los archivos con extensión .log en el repositorio.
+  build/ — Ignora la carpeta build y todo su contenido.
+  secret.txt — Ignora el archivo secret.txt.
+
+  2. Usar comodines (wildcards)
+  *: Coincide con cualquier secuencia de caracteres, excepto los directorios y archivos que contienen /.
+
+  Ejemplo: *.log ignorará todos los archivos .log en cualquier directorio.
+  ?: Coincide con un solo carácter.
+
+  Ejemplo: file?.txt ignorará file1.txt, file2.txt, etc.
+  []: Coincide con un solo carácter dentro de los corchetes.
+
+  Ejemplo: file[1-3].txt ignorará file1.txt, file2.txt, y file3.txt.
+
+  3. Ignorar directorios
+  Si quieres ignorar un directorio, debes agregar una barra diagonal al final del nombre.
+  Ejemplo: node_modules/ ignorará el directorio node_modules y todos sus archivos.
+
+  4. Negar la ignorancia de un archivo o directorio
+  Si deseas incluir un archivo o directorio que previamente se ha ignorado, puedes usar un signo de exclamación ! al comienzo de la línea.
+  Ejemplo:
+  *.log — Ignora todos los archivos .log.
+  !important.log — Pero no ignorar important.log si hay un archivo llamado así.
+
+  5. Comentarios
+  Los comentarios en un .gitignore se escriben con un signo #.
+  Ejemplo:
+  gitignore
+  # Ignorar archivos de log
+  *.log
+
+  6. Ignorar archivos o directorios en cualquier lugar
+  Si quieres ignorar un archivo en cualquier directorio, puedes usar **/.
+  Ejemplo: **/*.log ignorará todos los archivos .log, sin importar en qué subdirectorio estén.
+
+  7. Ignorar archivos o directorios en el nivel raíz
+  Para ignorar un archivo o directorio solo en el nivel raíz del repositorio, se puede especificar la ruta desde la raíz con una barra diagonal (/) al inicio.
+  Ejemplo:
+  /config/ ignorará el directorio config solo si está en el directorio raíz del repositorio.
+
+  8. Patrones relativos y absolutos
+  Las rutas especificadas en .gitignore son relativas al directorio en el que se encuentra el archivo .gitignore. Si quieres que un archivo o directorio específico se     
+  ignore en todo el proyecto, debes proporcionar la ruta correcta.
