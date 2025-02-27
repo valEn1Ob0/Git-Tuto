@@ -17,6 +17,7 @@ Comandos basicos:
   git init # Inicia un repositorio con git en mi carpeta actual 
   git clone [URL] # Clona (descarga) un repositorio remoto a mi maquina local
   git add [archivo] # Agrega archivos al area de preparacion (usa git add . para agregar todos los archivos)
+  git restore --staged [archivo] # Elimina un archivo del area de preparacion
   git status # Muestra el estado de los archivos en el repositorio de git
   git status -s (o) --short # Igual a git status pero muestra menos informacion
   git commit -m "mensaje" -a # Guarda los cambios de mi repositorio con un mensaje de los cambios
@@ -25,10 +26,10 @@ Comandos basicos:
   git restore [archivo] # Restablece un archivo eliminado que se le habia hecho un commit 
   git checkout [archivo] # En caso de que le archivo no este en el area de preparacion,
    establece el ultimo estado en el que estuvo un archivo cuando se le hizo un commit
-  git reset --hard # Forza los cambios hacia el ultimo commit hecho (incluso si se hico un cambio y se lo agrego a la preparacion)
+  git reset --hard # Forza los cambios hacia el ultimo commit hecho (incluso si se hizo un cambio y se lo agrego a la preparacion)
   git mv [archivo1 archivo2] # Cambia el nombre de un archivo y se guarda en el area de preparacion 
   git show [archivo] # Muestra detalles de un archivo que se le haya hecho un commit
-  git diff --staged # Muestra la diferencia de los archivos que estan en el area de preparacion y los del ultimo commit
+  git diff --staged # Muestra la diferencia de los archivos que estan entre el area de preparacion y los del ultimo commit
   git log # Muestra los detalles de los commits hechos 
   git log --oneline # Muestra los datos de los commits hechos (simplificado) 
   git diff [commit1] [commit2] # Muestra los cambios de los archivos entre dos commits,
@@ -36,8 +37,16 @@ Comandos basicos:
   git diff --name-only [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio muestra la diferencia de los nombres
   git diff --word-diff [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio,
    muestra la diferencia del contenido dentro de los archivos 
-  git commit --amend # Vuelve a hacer un commit 
-  git rebase -i head~[commits hacia atras] # Vuelve a un commit mas viejo desde el commit head
+  git commit --amend # Vuelve a hacer el ultimo commit cambiando su hash
+  git rebase -i head~[commits hacia atras] # Vuelve hacia commits mas viejos cambiando el head de posicion
+  git rebase --continue # Vuelve todos los commits adelante donde anteriormente tenia el head,
+   (los commits que mas nuevos cambian su hash)
+  git reset --soft [hash] # Borra el commit seleccionado pero guardando los cambios del commit en el area de preparacion 
+  git reset --soft head~[commits hacia atras] # Lo mismo que el anterior pero seleccionando cuantos commits quiero ir hacia atras,
+    (si ya tenia archivos en el area de preparacion se mantienen y les da prioridad)
+  git reset --mixed [hash] # Borra el commit seleccionado sin guardar el ultimo commit al area de preparacion, 
+    pero no modifica el area de trabajo
+  git reset --hard [hash] # Borra el commit seleccionado sin guardar nada 
 
 Aclaraciones:
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
