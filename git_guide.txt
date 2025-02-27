@@ -25,7 +25,7 @@ Comandos basicos:
   git restore [archivo] # Restablece un archivo eliminado que se le habia hecho un commit 
   git checkout [archivo] # En caso de que le archivo no este en el area de preparacion,
    establece el ultimo estado en el que estuvo un archivo cuando se le hizo un commit
-  git reset --hard # Forza los cambios hacia el ultimo commit hecho 
+  git reset --hard # Forza los cambios hacia el ultimo commit hecho (incluso si se hico un cambio y se lo agrego a la preparacion)
   git mv [archivo1 archivo2] # Cambia el nombre de un archivo y se guarda en el area de preparacion 
   git show [archivo] # Muestra detalles de un archivo que se le haya hecho un commit
   git diff --staged # Muestra la diferencia de los archivos que estan en el area de preparacion y los del ultimo commit
@@ -37,6 +37,7 @@ Comandos basicos:
   git diff --word-diff [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio,
    muestra la diferencia del contenido dentro de los archivos 
   git commit --amend # Vuelve a hacer un commit 
+  git rebase -i head~[commits hacia atras] # Vuelve a un commit mas viejo desde el commit head
 
 Aclaraciones:
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
