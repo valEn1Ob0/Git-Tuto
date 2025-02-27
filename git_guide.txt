@@ -63,10 +63,12 @@ Comandos basicos:
   git reflog # Muestra todas las referencias a los commits (incluso si se borraron)
   git remote add origin [URL] # Agrega a mi repositorio local a un repositorio remoto 
   git push origin [rama actual] # Enviar los cambios a mi repositorio remoto si ya se clono (descargo),
-    a la rama elegida  
-  git pull # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local
+    a la rama elegida 
+  git push -u origin [rama actual] # Lo mismo que el original pero este configura para que se haga,
+    "git push" se haga a origin y la rama elegida   
+  git pull # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local,
     (trae los archivos del servidor y los fusiona a la rama actual)
-  git fetch # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local
+  git fetch # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local,
     (trae los archivos del servidor en otra rama temporal)  
   
 
