@@ -10,7 +10,7 @@ Configuraciones basicas:
   git config --global core.editor "vim" # Configura el editor de codigo globalmente (en este caso es vim) del usuario
   git config --global core.autocrlf input # Configura salto de linea segun el sistema que tengas globalmente,
     (si tienes sistema unix dajalo en input y si tienes sistema windows dejalo en true) del usuario usuario
-  git config --global core.abbrev 5 # Configura el codigo con el que se reconze a los commits con un largo
+  git config --global core.abbrev 5 # Configura el hash con el que se reconze a los commits con un largo
 
 
 Comandos basicos:
@@ -29,14 +29,14 @@ Comandos basicos:
   git mv [archivo1 archivo2] # Cambia el nombre de un archivo y se guarda en el area de preparacion 
   git show [archivo] # Muestra detalles de un archivo que se le haya hecho un commit
   git diff --staged # Muestra la diferencia de los archivos que estan en el area de preparacion y los del ultimo commit
-  git log # Muestra los datos de los commits hechos 
+  git log # Muestra los detalles de los commits hechos 
   git log --oneline # Muestra los datos de los commits hechos (simplificado) 
   git diff [commit1] [commit2] # Muestra los cambios de los archivos entre dos commits,
-   (es necesario tener el codigo de los commits)
+   (es necesario tener el hash de los commits)
   git diff --name-only [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio muestra la diferencia de los nombres
   git diff --word-diff [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio,
-   muestra la diferencia exacta de los archivos
-  
+   muestra la diferencia del contenido dentro de los archivos 
+  git commit --amend # Vuelve a hacer un commit 
 
 Aclaraciones:
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
