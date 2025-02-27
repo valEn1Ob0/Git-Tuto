@@ -1,5 +1,15 @@
 # Git Basics
 
+## 📋 Table of Contents
+1. [Core Concepts](#core-concepts)
+2. [Essential Commands](#essential-commands)
+3. [Working with Remote Repositories](#working-with-remote-repositories)
+4. [Basic Workflow Example](#basic-workflow-example)
+5. [Modern Git Commands](#modern-git-commands)
+6. [Handling Merge Conflicts](#handling-merge-conflicts)
+7. [Common Issues and Solutions](#common-issues-and-solutions)
+8. [Next Steps](#next-steps)
+
 ## 🌟 Core Concepts
 
 ### What is Git?
@@ -73,6 +83,59 @@ git commit -m "Add new feature"
 git push origin feature-name
 ```
 
+## 🔄 Modern Git Commands
+
+### Switch and Restore (Git 2.23+)
+```bash
+# Switch branches (replaces git checkout)
+git switch main
+git switch -c new-feature  # Create and switch
+
+# Restore files (replaces git checkout -- <file>)
+git restore <file>  # Discard working directory changes
+git restore --staged <file>  # Unstage files
+git restore --source=HEAD~1 <file>  # Restore from specific commit
+```
+
+## 🔀 Handling Merge Conflicts
+
+### Understanding Conflicts
+When Git can't automatically merge changes, you'll see:
+- `<<<<<<<` HEAD (current changes)
+- `=======` divider
+- `>>>>>>>` branch-name (incoming changes)
+
+### Resolving Conflicts
+```bash
+# 1. Identify conflicted files
+git status
+
+# 2. Open and edit conflicted files
+# Remove conflict markers and keep desired changes
+
+# 3. Mark as resolved
+git add <resolved-file>
+
+# 4. Complete the merge
+git commit -m "Resolve merge conflicts"
+```
+
+### Preventing Conflicts
+```bash
+# Update your branch before making changes
+git pull origin main
+
+# Check potential conflicts before merging
+git fetch origin
+git diff main origin/main
+```
+
+### Aborting a Merge
+```bash
+# If you want to start over
+git merge --abort
+```
+
 ## ⚠️ Common Issues and Solutions
 
 ### 1. Undoing Changes
@@ -100,3 +163,4 @@ git rm file-name
 - Learn about [branching strategies](team-workflows.md)
 - Explore [advanced Git features](git-advanced.md)
 - Master [.gitignore patterns](gitignore-guide.md)
+- Practice [resolving merge conflicts](git-conflicts.md)
