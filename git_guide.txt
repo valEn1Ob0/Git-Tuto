@@ -17,6 +17,7 @@ Comandos basicos:
   git init # Inicia un repositorio con git en mi carpeta actual 
   git clone [URL] # Clona (descarga) un repositorio remoto a mi maquina local
   git add [archivo] # Agrega archivos al area de preparacion (usa git add . para agregar todos los archivos)
+  git restore [archivo] # Revierte los cambios de un archivo en el area de trabajo a su ultima confirmada por git 
   git restore --staged [archivo] # Elimina un archivo del area de preparacion
   git status # Muestra el estado de los archivos en el repositorio de git
   git status -s (o) --short # Igual a git status pero muestra menos informacion
