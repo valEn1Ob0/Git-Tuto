@@ -9,7 +9,7 @@ Configuraciones basicas:
   git config --global user.email "tu.email@ejemplo.com" # Configura globalmente el email del usuario
   git config --global core.editor "vim" # Configura el editor de codigo globalmente (en este caso es vim) del usuario
   git config --global core.autocrlf input # Configura salto de linea segun el sistema que tengas globalmente,
-    (si tienes sistema unix dajalo en input y si tienes sistema windows dejalo en true) del usuario usuario
+    (si tienes sistema unix dajalo en input y si tienes sistema windows dejalo en true) del usuario
   git config --global core.abbrev 5 # Configura el hash con el que se reconze a los commits con un largo
 
 
