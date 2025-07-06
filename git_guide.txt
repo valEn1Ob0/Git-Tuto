@@ -13,64 +13,111 @@ Configuraciones basicas:
   git config --global core.abbrev 5 # Configura el hash con el que se reconze a los commits con un largo
 
 
-Comandos basicos:
-  git init # Inicia un repositorio con git en mi carpeta actual 
-  git clone [URL] # Clona (descarga) un repositorio remoto a mi maquina local
-  git add [archivo] # Agrega archivos al area de preparacion (usa git add . para agregar todos los archivos)
-  git restore [archivo] # Revierte los cambios de un archivo en el area de trabajo a su ultima confirmada por git 
-  git restore --staged [archivo] # Elimina un archivo del area de preparacion
-  git status # Muestra el estado de los archivos en el repositorio de git
-  git status -s (o) --short # Igual a git status pero muestra menos informacion
-  git commit -m "mensaje" -a # Guarda los cambios de mi repositorio con un mensaje de los cambios
-  git commit # Guarda los cambios de mi repositorio sin ningun mensaje
-  git commit -a # Guarda los cambios de mi repositorio sin pasar por el area de preparacion
-  git restore [archivo] # Restablece un archivo eliminado que se le habia hecho un commit 
-  git checkout [archivo] # En caso de que le archivo no este en el area de preparacion,
-   establece el ultimo estado en el que estuvo un archivo cuando se le hizo un commit
-  git reset --hard # Forza los cambios hacia el ultimo commit hecho (incluso si se hizo un cambio y se lo agrego a la preparacion)
-  git mv [archivo1 archivo2] # Cambia el nombre de un archivo y se guarda en el area de preparacion 
-  git show [archivo] # Muestra detalles de un archivo que se le haya hecho un commit
-  git diff --staged # Muestra la diferencia de los archivos que estan entre el area de preparacion y los del ultimo commit
-  git log # Muestra los detalles de los commits hechos 
-  git log --oneline # Muestra los datos de los commits hechos (simplificado) 
-  git diff [commit1] [commit2] # Muestra los cambios de los archivos entre dos commits,
-   (es necesario tener el hash de los commits)
-  git diff --name-only [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio muestra la diferencia de los nombres
-  git diff --word-diff [commit1] [commit2] # Lo mismo que el diff comun pero este en cambio,
-   muestra la diferencia del contenido dentro de los archivos 
-  git commit --amend # Vuelve a hacer el ultimo commit cambiando su hash
-  git rebase -i head~[commits hacia atras] # Vuelve hacia commits mas viejos cambiando el head de posicion
-  git rebase --continue # Vuelve todos los commits adelante donde anteriormente tenia el head,
-   (los commits que mas nuevos cambian su hash)
-  git reset --soft [hash] # Borra el commit seleccionado pero guardando los cambios del commit en el area de preparacion 
-  git reset --soft head~[commits hacia atras] # Lo mismo que el anterior pero seleccionando cuantos commits quiero ir hacia atras,
-    (si ya tenia archivos en el area de preparacion se mantienen y les da prioridad)
-  git reset --mixed [hash] # Borra el commit seleccionado sin guardar el ultimo commit al area de preparacion, 
-    pero no modifica el area de trabajo
-  git reset --hard [hash] # Borra el commit seleccionado sin guardar nada 
-  git branch # Muestra el nombre de las ramas que tenemos creadas
-  git branch [nombre de la rama] # Crea una rama desde nuestra rama actual usando convencionalmente kebab-case,
-   (usar "-" para separar entre palabras)
-  git switch [nombre de la rama] # Intercambia la rama que estoy usando
-  git switch -c [nombre de la rama] # Crea una rama desde nuestra rama actual y se intercambia automaticamente a esa rama
-  git branch -d [nombre de la rama] # Elimina la rama seleccionada (no eliminarla estando dentro de esa rama)
+Comandos:
+  Basicos:
+  git init                                                       # Inicia un repositorio con git en mi carpeta actual
+
+  git clone [URL]                                                # Clona (descarga) un repositorio remoto a mi maquina local
+
+  git add [archivo]                                              # Agrega archivos al area de preparacion (usa git add . para agregar todos los archivos)
+
+  git restore [archivo]                                          # Revierte los cambios de un archivo en el area de trabajo a su ultima confirmada por git
+
+  git restore --staged [archivo]                                 # Elimina un archivo del area de preparacion
+
+  git status                                                     # Muestra el estado de los archivos en el repositorio de git
+
+  git status -s (o) --short                                      # Igual a git status pero muestra menos informacion
+
+  git commit -m "mensaje" -a                                     # Guarda los cambios de mi repositorio con un mensaje de los cambios
+
+  git commit                                                     # Guarda los cambios de mi repositorio sin ningun mensaje
+
+  git commit -a                                                  # Guarda los cambios de mi repositorio sin pasar por el area de preparacion
+
+  git restore [archivo]                                          # Restablece un archivo eliminado que se le habia hecho un commit
+
+  git checkout [archivo]                                         # En caso de que le archivo no este en el area de preparacion, 
+                                                                   establece el ultimo estado en el que estuvo un archivo cuando se le hizo un commit
+
+  git reset --hard                                               # Forza los cambios hacia el ultimo commit hecho,
+                                                                   (incluso si se hizo un cambio y se lo agrego a la preparacion)
+
+  git mv [archivo1 archivo2]                                     # Cambia el nombre de un archivo y se guarda en el area de preparacion 
+
+  git show [archivo]                                             # Muestra detalles de un archivo que se le haya hecho un commit
+
+  git diff --staged                                              # Muestra la diferencia de los archivos que estan entre el area de preparacion y los del
+                                                                   ultimo commit
+
+  git log                                                        # Muestra los detalles de los commits hechos 
+
+  git log --oneline                                              # Muestra los datos de los commits hechos (simplificado)
+
+  git diff [commit1] [commit2]                                   # Muestra los cambios de los archivos entre dos commits,
+                                                                   (es necesario tener el hash de los commits)
+
+  git diff --name-only [commit1] [commit2]                       # Lo mismo que el diff comun pero este en cambio muestra la diferencia de los nombres
+
+  git diff --word-diff [commit1] [commit2]                       # Lo mismo que el diff comun pero este en cambio,
+                                                                   muestra la diferencia del contenido dentro de los archivos
+
+  git commit --amend                                             # Vuelve a hacer el ultimo commit cambiando su hash
+
+  git rebase -i head~[commits hacia atras]                       # Vuelve hacia commits mas viejos cambiando el head de posicion
+
+  git rebase --continue                                          # Vuelve todos los commits adelante donde anteriormente tenia el head,
+                                                                   (los commits que mas nuevos cambian su hash)
+
+  git reset --soft [hash]                                        # Borra el commit seleccionado pero guardando los cambios del commit en el area de preparacion
+
+  git reset --soft head~[commits hacia atras]                    # Lo mismo que el anterior pero seleccionando cuantos commits quiero ir hacia atras,
+                                                                   (si ya tenia archivos en el area de preparacion se mantienen y les da prioridad)
+
+  git reset --mixed [hash]                                       # Borra el commit seleccionado sin guardar el ultimo commit al area de preparacion, 
+                                                                   pero no modifica el area de trabajo
+
+  git reset --hard [hash]                                        # Borra el commit seleccionado sin guardar nada 
+
+  git branch                                                     # Muestra el nombre de las ramas que tenemos creadas
+
+  git branch [nombre de la rama]                                 # Crea una rama desde nuestra rama actual usando convencionalmente kebab-case,
+                                                                   (usar "-" para separar entre palabras)
+
+  git switch [nombre de la rama]                                 # Intercambia la rama que estoy usando
+
+  git switch -c [nombre de la rama]                              # Crea una rama desde nuestra rama actual y se intercambia automaticamente a esa rama
+
+  git branch -d [nombre de la rama]                              # Elimina la rama seleccionada (no eliminarla estando dentro de esa rama)
+
   git switch [nombre de la rama viejo] [nombre de la rama nuevo] # Renombra una rama seleccionada,
-   (no cambiar el nombre dentro de esa rama)
-  git branch -m [nombre de la rama nuevo] # Cambia el nombre de la rama actual
-  git reset --hard [commit] # Elimina la fusion rama
-  git merge [nombre de la rama] # Fuciona la rama seleccionada con la master    
-  git ls-tree -r --name-only [hash] # Muestra todos los nombres de los archivos y directorios que tiene un commit en especifico
-  git reflog # Muestra todas las referencias a los commits (incluso si se borraron)
-  git remote add origin [URL] # Agrega a mi repositorio local a un repositorio remoto 
-  git push origin [rama actual] # Enviar los cambios a mi repositorio remoto si ya se clono (descargo),
-    a la rama elegida 
-  git push -u origin [rama actual] # Lo mismo que el original pero este configura para que se haga,
-    "git push" se haga a origin y la rama elegida   
-  git push origin --delete [nombre-de-la-rama] # Elimina una rama del repositorio remoto 
-  git pull # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local,
-    (trae los archivos del servidor y los fusiona a la rama actual)
-  git fetch # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro repositorio local,
-    (trae los archivos del servidor en otra rama temporal, para incorporarlo a la rama main se puede hacer "git merge origin/main")  
+                                                                   (no cambiar el nombre dentro de esa rama)
+
+  git branch -m [nombre de la rama nuevo]                        # Cambia el nombre de la rama actual
+
+  git reset --hard [commit]                                      # Elimina la fusion rama
+
+  git merge [nombre de la rama]                                  # Fuciona la rama seleccionada con la master
+
+  git ls-tree -r --name-only [hash]                              # Muestra todos los nombres de los archivos y directorios que tiene un commit en especifico
+
+  git reflog                                                     # Muestra todas las referencias a los commits (incluso si se borraron)
+
+  git remote add origin [URL]                                    # Agrega a mi repositorio local a un repositorio remoto
+
+  git push origin [rama actual]                                  # Enviar los cambios a mi repositorio remoto si ya se clono (descargo),
+                                                                   a la rama elegida 
+
+  git push -u origin [rama actual]                               # Lo mismo que el original pero este configura para que se haga,
+                                                                   "git push" se haga a origin y la rama elegida
+
+  git push origin --delete [nombre-de-la-rama]                   # Elimina una rama del repositorio remoto
+
+  git pull                                                       # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro
+                                                                   repositorio local, (trae los archivos del servidor y los fusiona a la rama actual)
+
+  git fetch                                                      # Trae los ultimos cambios que se haya hecho en el repositorio remoto hacia nuestro
+                                                                   repositorio local, (trae los archivos del servidor en otra rama temporal, para incorporarlo a la rama main se puede hacer "git merge origin/main")  
 
 Buenas Practicas en git:
   1. Agregar .gitingore (mayormente util)
@@ -96,7 +143,7 @@ Buenas Practicas en git:
   16. Usar GitFlow
   17. Usar GitHub Flow
 
-Aclaraciones: 
+Aclaraciones:
   Es necesario hacer un commit luego de eliminar un archivo de mi carpeta si se lo quiere recuperar, 
     (si ya se le habia hecho un commit antes)
   Las ramas son copias de un repositorio que no afectan a la version original de el a menos que se fusion en,
