@@ -213,3 +213,13 @@ Deshace una fusión (merge) que ya se ha completado, siempre y cuando no hayas h
 git revert -m 1 [hash-commit-fusion]
 ```
 Deshace un commit de fusión creando un nuevo commit que revierte los cambios introducidos por la fusión. La opción `-m 1` especifica que se revierta a la versión del lado del primer padre (tu rama antes de la fusión). Es la forma recomendada de deshacer fusiones en historiales compartidos.
+
+```bash
+git rm [nombre_del_archivo]
+```
+Elimina un archivo para git y para el disco local. Tambien se puede hacer `git rm -r [nombre_de_la_carpeta]` para eliminar carpetas en cambio.
+
+```bash
+git rm --cached [nombre_del_archivo]
+```
+Deja de rastrar un archivo con git pero mantiene el archivo en el disco local. Tambien se puede hacer `git rm -r --cached [nombre_de_la_carpeta]` para dejar de rastrear una carpeta en cambio.
